@@ -1,4 +1,5 @@
-import { Box, Link, Image, Flex, Input, InputGroup, InputLeftElement, Stack, Divider } from '@chakra-ui/react'
+import { Box, Image, Flex, Input, InputGroup, InputLeftElement, Stack, Divider } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import React from 'react'
 import { BiSearchAlt2 } from "react-icons/bi"
 import { BsMinecart } from "react-icons/bs"
@@ -28,7 +29,7 @@ const Navbar = () => {
           </InputGroup>
         </Stack></Box>
         <Flex>
-          <Box>Sign In</Box>
+          <Box><Link to="/signup">Sign In</Link></Box>
           <Box><BsMinecart /></Box>
         </Flex>
       </Flex>

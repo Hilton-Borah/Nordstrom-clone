@@ -10,7 +10,7 @@ import {AiOutlinePlus} from "react-icons/ai"
 
 const Footer = () => {
     return (
-        <Box bgColor="#f9f9f9" h={"100%"}>
+        <Box bgColor="#f9f9f9" h={"100%"} pt="30px">
         <Flex width={"1450px"} margin="auto" color={"#696969"} mb="30px">
             <Box width={"1250px"} fontWeight={100}>
                 <Grid templateColumns='repeat(6, 1fr)' gap={6} lineHeight={"32px"} fontSize="15px">
