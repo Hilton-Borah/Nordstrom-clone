@@ -12,6 +12,8 @@ const dataUser = {
   password: ""
 }
 
+let user = JSON.parse(localStorage.getItem("details")) ||{}
+
 const SignUpEmail = () => {
   const navigate = useNavigate()
   const toast = useToast()

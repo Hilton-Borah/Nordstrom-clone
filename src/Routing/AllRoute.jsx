@@ -4,6 +4,7 @@ import Cart from '../Componants/Cart/Cart'
 import SignUpEmail from '../Componants/LogSign/SignUp'
 import SignUpPassword from '../Componants/LogSign/Login'
 import Home from "../MainPages/Home"
+import Address from '../Componants/Cart/Address'
 
 const AllRoute = () => {
   return (
@@ -13,6 +14,7 @@ const AllRoute = () => {
         <Route path='/signup' element={<SignUpEmail/>}></Route>
         <Route path='/login' element={<SignUpPassword/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
+        <Route path='/address' element={<Address/>}></Route>
       </Routes>
     </div>
   )

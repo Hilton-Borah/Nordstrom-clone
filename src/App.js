@@ -7,6 +7,9 @@ import './App.css';
 // import Footer from './Componants/HomePage/Footer';
 import Home from "./MainPages/Home"
 import AllRoute from './Routing/AllRoute';
+import Cart from './Componants/Cart/Cart';
+import Address from './Componants/Cart/Address';
+import Payment from './Componants/Cart/Payment';
 // import SignUp from './Componants/LogSign/SignUpEmail';
 // import Dummy from './Componants/Cart/Dummy';
 
@@ -15,7 +18,9 @@ function App() {
     <div className="App">
       {/* <Home/> */}
       {/* <Dummy/> */}
-<AllRoute/>
+{/* <AllRoute/> */}
+{/* <Address/> */}
+<Payment/>
 
     </div>
   );

@@ -21,7 +21,7 @@ const dataUser={
   password:""
 }
 
-const details = JSON.parse(localStorage.getItem("details"))
+const details = JSON.parse(localStorage.getItem("details")) || {}
 
 const SignUpPassword = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -41,11 +41,20 @@ const SignUpPassword = () => {
   }
 
   const handleSubmit=()=>{
-    if (details.username===username && details.password===password){
-      setAuthDum(true)
-      setText(dataUser)
-      // alert("succesfully login")
-    } 
+    // details.map((el)=>{
+      if (details.username===username && details.password===password){
+        setAuthDum(true)
+        setText(dataUser)
+        // alert("succesfully login")
+      } 
+      // else {
+      //   setAuthDum(false)
+      // }
+      console.log(username,password)
+      console.log(details.username,details.password)
+      // }
+    // })
+
   //   else {
   //   alert("not match")
   // }

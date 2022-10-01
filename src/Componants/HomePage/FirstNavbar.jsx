@@ -6,6 +6,9 @@ import { BsMinecart } from "react-icons/bs"
 // import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+
+  const details = JSON.parse(localStorage.getItem("details"))||{}
+
   return (
     <>
       <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"} textAlign={"center"} h={10} background={"black"} color={"white"} fontSize={14}>
@@ -29,7 +32,7 @@ const Navbar = () => {
           </InputGroup>
         </Stack></Box>
         <Flex>
-          <Box><Link to="/signup">Sign In</Link></Box>
+          <Box><Link to="/signup">{details.username?details.username:"Sign In"}</Link></Box>
           <Box><BsMinecart /></Box>
         </Flex>
       </Flex>
