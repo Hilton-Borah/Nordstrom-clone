@@ -24,7 +24,7 @@ const Payment = () => {
                     <Image src="./images/nord32.png"/>
                 </Flex>
                 </Stack>
-                <Box border={"1px solid "} w="700px">dwdw</Box>
+                <Box border={"1px solid black"} w="700px">dwdw</Box>
             </Flex>
         </div>
     )
