@@ -125,20 +125,6 @@ export default function CategoryDropdown(props) {
                 <Link>{nil}</Link><br />
               </Box>
             </MenuItem>
-            {/* <MenuItem bgColor="white" borderRight={"0.5px solid lightgray"} borderTop={"0.5px solid lightgray"} borderBottom={"0.5px solid lightgray"} p={3}
-              onSelect={() => {
-                setIsOpen(false);
-              }}
-            >
-              <Box lineHeight="40px">
-                <Link fontWeight={"bold"}>{four}</Link><br />
-                <Link>{m}</Link><br />
-                <Link>{n}</Link><br />
-                <Link>{o}</Link><br />
-                <Link>{p}</Link><br />
-              </Box>
-
-            </MenuItem> */}
           </Box>
         </MenuList>
       </Menu>
