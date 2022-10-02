@@ -1,3 +1,7 @@
+*{
+  font-family: "Brandon Text", Arial, sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +9,10 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.sale{
+  color: red;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -36,3 +44,5 @@
     transform: rotate(360deg);
   }
 }
+
+

@@ -1,23 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+// import FirstNavbar from "./Componants/HomePage/FirstNavbar"
+
+// import SecondNavbraMain from './Componants/HomePage/SecondNavbraMain';
+// import Body1 from './Componants/HomePage/Body1';
+// import Footer from './Componants/HomePage/Footer';
+import Home from "./MainPages/Home"
+import AllRoute from './Routing/AllRoute';
+import Cart from './Componants/Cart/Cart';
+import Address from './Componants/Cart/Address';
+import Payment from './Componants/Cart/Payment';
+// import SignUp from './Componants/LogSign/SignUpEmail';
+import Dummy from './Componants/Cart/Dummy';
+import Female from './Componants/ProductPages/Female';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Home/> */}
+      {/* <Dummy/> */}
+<AllRoute/>
+{/* <Address/> */}
+{/* <Payment/> */}
+{/* <Female/> */}
+
+
     </div>
   );
 }
