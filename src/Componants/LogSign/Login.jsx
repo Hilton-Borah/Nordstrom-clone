@@ -8,50 +8,61 @@ import { Box, Button, Input, Text ,  Modal, Image,
   useDisclosure,
   Flex,
   Checkbox,} from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../Context/AuthContext'
 import FirstNavbar from "../HomePage/FirstNavbar"
 import Footer from '../HomePage/Footer'
 import SecondNavbraMain from '../HomePage/SecondNavbraMain'
 
 // let username = JSON.parse(localStorage.getItem("details"))
 
-const dataUser={
+let dataUser={
   username:"",
   password:""
 }
 
-const details = JSON.parse(localStorage.getItem("details")) || {}
+let details;
 
 const SignUpPassword = () => {
+  const {setAuth} = useContext(AuthContext)
   const { isOpen, onOpen, onClose } = useDisclosure()
   const navigate = useNavigate()
+  
+  useEffect(()=>{
+     details = JSON.parse(localStorage.getItem("details"))
 
-  const [text, setText] = useState(dataUser)
+  })
+
+  let  [text, setText] = useState(dataUser)
   if (!text){
     alert("plz do something")
   }
   const [authdum, setAuthDum] = useState(false)
 
-  const { username, password } = text
+  let { username, password } = text
 
   const handlechange = (e) => {
     const {name,value} = e.target
     setText({...text , [name]:value})
   }
 
+  let de;
+
   const handleSubmit=()=>{
     // details.map((el)=>{
-      if (details.username===username && details.password===password){
+      if (username===details.username && password===details.password){
+        // de = details.email
         setAuthDum(true)
         setText(dataUser)
+        setAuth(true)
         // alert("succesfully login")
       } 
       // else {
       //   setAuthDum(false)
       // }
       console.log(username,password)
-      console.log(details.username,details.password)
+      console.log(details.username,details.password,details.email)
       // }
     // })
 
@@ -80,8 +91,7 @@ const SignUpPassword = () => {
         <Text fontSize="20px">Welcome back!</Text>
         <Text fontSize="13px">Sign in with the same info at:</Text>
         <Image w="150px" mt="20px" mb="20px" src="./images/nord22.png"/>
-        <Text fontSize="13px" fontWeight="bold">Email</Text>
-        <Flex fontSize="13px" mt="-10px" justifyContent="space-between"><Text>{details.email}</Text><NavLink borderBottom="0.5px solid" to="/signup"><u>Edit</u></NavLink></Flex>
+        {/* <Flex fontSize="13px" mt="-10px" justifyContent="space-between"><Text>{details.email}</Text><NavLink borderBottom="0.5px solid" to="/signup"><u>Edit</u></NavLink></Flex> */}
         <Text fontSize="13px" fontWeight="bold">Username</Text>
         <Input type="text" name="username" value={username} onChange={handlechange} border="2px solid gray" placeholder="Enter Your Username" required />
         <Text fontSize="13px" fontWeight="bold">Password</Text>
@@ -89,14 +99,14 @@ const SignUpPassword = () => {
         <Text fontSize="13px"><u>Forget Password</u></Text>
         <Box><Checkbox defaultChecked><Text fontSize="13px">Keep me Sign in</Text></Checkbox></Box>
 
-      <Button _hover={{ bgcolor: "gray" }} mt="20px" s w="370px" fontSize="13px" bg="black" color="white"  onClick={()=>{ onOpen(); handleSubmit()}}>Sign In</Button>
+      <Button _hover={{ bgcolor: "gray" }} mt="20px" s w="370px" fontSize="13px" bg="black" color="white"  onClick={()=>{ onOpen(); handleSubmit()}}>Log In</Button>
       {authdum?<><Modal isOpen={isOpen} onClose={onClose}>
   <ModalOverlay />
   <ModalContent>
     <ModalHeader> Logged in Successfully</ModalHeader>
     <ModalCloseButton />
     <ModalBody>
-    Hai, {details.username} Now you can explore more of our site
+    Hai, Buddy Now you can explore more of our site
     </ModalBody>
 
     <ModalFooter>
@@ -112,11 +122,11 @@ const SignUpPassword = () => {
     <ModalHeader> Logged in failed</ModalHeader>
     <ModalCloseButton />
     <ModalBody>
-    Hai, {details.username} you put wrong credential. Please check!!!
+    Hai, Buddy you put wrong credential. Please check!!!
     </ModalBody>
 
     <ModalFooter>
-      <Button colorScheme='blue' mr={3} onClick={onClose}>
+     <Button  colorScheme='blue' mr={3} onClick={onClose}>
         Fill up again
       </Button>
       <Button variant='ghost'><Link to="/">Got to Home page</Link></Button>

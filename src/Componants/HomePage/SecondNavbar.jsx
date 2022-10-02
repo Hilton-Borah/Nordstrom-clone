@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Menu, MenuButton, MenuList, MenuItem, Link, Box, Divider, background } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 // import 
 
 export default function CategoryDropdown(props) {
@@ -91,7 +92,7 @@ export default function CategoryDropdown(props) {
                 setIsOpen(false);
               }}>
               <Box lineHeight="40px">
-                <Link href="/femaleclothing" fontWeight={"bold"} >{two}</Link><br />
+                <NavLink to="/femaleclothing" fontWeight={"bold"} >{two}</NavLink><br />
                 <Link>{e}</Link><br />
                 <Link>{f}</Link><br />
                 <Link>{g}</Link><br />
@@ -111,7 +112,7 @@ export default function CategoryDropdown(props) {
               }}
             >
               <Box lineHeight="40px">
-                <Link href="/maleclothing" fontWeight={"bold"}>{three}</Link><br />
+                <NavLink to="/maleclothing" fontWeight={"bold"}>{three}</NavLink><br />
                 <Link>{i}</Link><br />
                 <Link>{j}</Link><br />
                 <Link>{k}</Link><br />

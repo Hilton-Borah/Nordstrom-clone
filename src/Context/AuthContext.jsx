@@ -7,9 +7,11 @@ const AuthContextProvider = ({children}) => {
     const [cart,setCart] = useState([])
     const [count,setCount] = useState(0)
     const [onetime,setOnetime] = useState({})
+    const [total,setTotal] = useState(0)
+    const [auth,setAuth] = useState(false)
   return (
     <div>
-      <AuthContext.Provider value={{isAuth,setisAuth,cart,setCart,onetime,setOnetime,count,setCount}}>{children}</AuthContext.Provider>
+      <AuthContext.Provider value={{isAuth,setisAuth,cart,setCart,onetime,setOnetime,count,setCount,total,setTotal,auth,setAuth}}>{children}</AuthContext.Provider>
     </div>
   )
 }

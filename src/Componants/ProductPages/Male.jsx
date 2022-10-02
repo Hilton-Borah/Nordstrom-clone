@@ -4,6 +4,9 @@ import React, { useContext, useState } from 'react'
 import Male from "../../ProductDetails/Male"
 import { AuthContext } from '../../Context/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
+import FirstNavbar from "../../Componants/HomePage/FirstNavbar"
+import SecondNavbraMain from '../HomePage/SecondNavbraMain'
+import Footer from '../HomePage/Footer'
 // import HoverImage from "react-hover-image";
 
 const FemalePage = () => {
@@ -13,7 +16,9 @@ const FemalePage = () => {
   console.log(onetime)
   return (
     <div>
-      <Text fontSize={"20px"} w="1450px" textAlign={"start"} margin="auto">Choose the product which you want</Text>
+            <FirstNavbar/>
+      <SecondNavbraMain/>
+      <Text fontSize={"20px"} w="1450px" textAlign={"start"} margin="auto" mt="50px">Choose the product which you want</Text>
       <Flex w="1450px" margin={"auto"} mt="50px" gap="10px">
         <Box fontSize={"20px"} w="200px" borderRight="1px solid lightgray" p={3}>
           <Flex mb="15px" borderBottom={"1px solid lightgray"} pb="15px" justifyContent={"space-between"}><Text>Color</Text><BsPlus /></Flex>
@@ -42,7 +47,7 @@ const FemalePage = () => {
           <Grid templateColumns='repeat(3, 1fr)' mt="20px" gap={6}>
             {
               Male.map((el) => {
-                return <GridItem w='100%' pl="30px">
+                return <GridItem w='100%' pl="30px" mb="30px" key={el.id}>
                   <Flex justifyContent={"center"} alignItems="center" margin={"auto"}><Image textAlign={"center"} w="300px" src={el.image1} /></Flex>
                   <Stack textAlign={"start"}>
                     <Text color={"green"} fontWeight="700">{el.all.details1}</Text>
@@ -60,6 +65,7 @@ const FemalePage = () => {
           </Grid>
         </Box>
       </Flex>
+      <Footer/>
     </div>
   )
 }

@@ -12,7 +12,7 @@ const dataUser = {
   password: ""
 }
 
-let user = JSON.parse(localStorage.getItem("details")) ||{}
+// let user = JSON.parse(localStorage.getItem("details")) ||{}
 
 const SignUpEmail = () => {
   const navigate = useNavigate()
@@ -30,6 +30,7 @@ const SignUpEmail = () => {
   }
 
   const handleSubmit = () => {
+    localStorage.clear()
     localStorage.setItem("details", JSON.stringify(text));
     toast({
       title: 'Account created.',

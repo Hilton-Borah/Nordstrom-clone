@@ -1,7 +1,11 @@
-import { Box, Button, Divider, Flex, Image, Input, Select, Stack } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { Box, Button,Text, Divider, Flex, Image, Input, Select, Stack } from '@chakra-ui/react'
+import React, { useContext, useState } from 'react'
 import { BsMinecart } from "react-icons/bs"
 import { useNavigate } from 'react-router-dom'
+import { Link } from "react-router-dom"
+import { AuthContext } from '../../Context/AuthContext'
+import Cart from './Cart'
+import {AiOutlineShoppingCart} from "react-icons/ai"
 
 
 const datauser = {
@@ -17,6 +21,7 @@ const datauser = {
 }
 
 const Address = () => {
+    const { count, total,cart } = useContext(AuthContext)
     const navigate = useNavigate()
     const [text, setText] = useState(datauser);
 
@@ -37,14 +42,25 @@ const Address = () => {
         setText({ ...text, [name]: value })
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
         localStorage.setItem("address", JSON.stringify(text))
-        navigate("/address")
+        navigate("/payment")
+        console.log(text)
     }
+
+    console.log(cart)
+
+    let sum= total + 8080 +11044
+
 
     return (
         <div width={"1450px"} margin="auto">
-            <Flex height="40px" width={"1450px"} margin="auto" mt="10px" justifyContent={"space-between"}><Image src="./images/nord27.png" /><BsMinecart fontSize={"30px"} /></Flex>
+            {/* <Image src="./images/nord27.png" /> */}
+            <Flex height="40px" width={"1450px"} margin="auto" mt="10px" justifyContent={"space-between"}><Link to="/"><Image src="./images/nord27.png" /></Link>            <Link to="/cart"><Box>
+                <Box fontSize={"15px"} mb="-20px">{count}</Box>
+                <Box mt="-28px"><BsMinecart fontSize={"35px"} /></Box>
+            </Box></Link></Flex>
             <Divider width={"1100px"} margin="auto" mb="10px" mt="50px" borderBottom={"1px solid lightgray"} />
             <Flex width={"1100px"} margin={"auto"}>
                 <Stack pl="10px" pr="30px" width={"1100px"}>
@@ -81,8 +97,36 @@ const Address = () => {
                         <Image src="./images/nord30.png" />
                     </form>
                 </Stack>
+                {/* <Link to="/payment"></Link> */}
+                <Box w="700px" p="20px" mt="-10px" bgColor={"#f4f4f4"}>
+                    <Stack>
+                        <Stack p={"20px"}>
+                            <Flex alignItems={"center"} gap="10px" mb="20px" fontWeight={"Bold"} fontSize="30px"><AiOutlineShoppingCart/><Text>Your Order</Text></Flex>
+                            <Button bgColor={"black"} color="white">Continue</Button>
+                            <Flex justifyContent="space-between" pt="20px"><Text>Items</Text><Text textAlign={"start"} >Rs. {total}</Text></Flex>
+                            <Flex justifyContent="space-between"><Text>Shipping</Text><Text textAlign={"start"} >Rs. 8080</Text></Flex>
+                            <Flex justifyContent="space-between"><Text>Duties & Taxes</Text><Text textAlign={"start"}>Rs. 11,044</Text></Flex>
+                            <Flex justifyContent="space-between" mb="30px" fontWeight={"Bold"} fontSize="20px"><Text>Total</Text><Text textAlign={"start"} >Rs .{sum}</Text></Flex>
+                            <Divider pb="30px" borderBottom={"1px solid gray"}/>
+                        </Stack>
+                    </Stack>
+                    {
+                        cart.map((el) =>{
+                            return <Flex justifyContent={"space-between"} pr="30px" mt="20px">
+                                <Image w="100px" src={el.el.image1}/>
+                                <Box textAlign={"start"} w="200px">
+                                <Text>{el.el.all.details2}</Text>
+                                <Text>{el.el.all.details3}</Text>
+                                <Text>{el.el.under_price}</Text>
+                                <Text>{el.el.item}</Text>
+                                </Box>
+     
+                            </Flex>
+                        })
 
-                <Box border={"1px solid "} w="700px">dwdw</Box>
+                        
+                    }
+                </Box>
             </Flex>
         </div>
     )

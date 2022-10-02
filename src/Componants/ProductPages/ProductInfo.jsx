@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../Context/AuthContext'
 import { Box, Button, Divider, Flex, Grid, Image, Select,Text } from '@chakra-ui/react'
 import FirstNavbar from "../../Componants/HomePage/FirstNavbar"
@@ -7,13 +7,19 @@ import Footer from '../HomePage/Footer'
 
 const ProductInfo = () => {
   const {cart,setCart, onetime,count,setCount } = useContext(AuthContext)
+
   const [t,st]=useState(false)
   // const { image1, image2, below_price, original_price, under_price, discount, details2, details3 } = onetime
   console.log("second:", onetime)
 
+  // useEffect(()=>{
+    
+  // },[cart])
+
   const handleClick=()=>{
     st(true)
     setCart([...cart,onetime])
+    // window.localStorage.setItem("MY_cart",JSON.stringify(cart))
     setCount(prev=>prev+1)
   }
 

@@ -1,8 +1,9 @@
 import { Box, Divider, Flex, Text, Image, Highlight, Button } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AiOutlineGift } from "react-icons/ai"
 import { TbBus } from "react-icons/tb"
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../Context/AuthContext'
 import FirstNavbar from "../HomePage/FirstNavbar"
 import Footer from '../HomePage/Footer'
 import SecondNavbraMain from '../HomePage/SecondNavbraMain'
@@ -63,6 +64,7 @@ let abd = [{
 ]
 
 let ruppeMaking = (value) => {
+
   let main = value.replace("INR", "")
   main = Number(main.replace(",", ""))
 
@@ -73,33 +75,40 @@ let sum = 0;
 
 
 const Cart = () => {
-
+  const {cart,setCart,total,setTotal} = useContext(AuthContext)
   const [text, setText] = useState(1)
   const [count, setCount] = useState(1)
   const handleChange = (e) => {
     setText(e.target.value)
   }
 
+useEffect(()=>{
+  setTotal(sum)
+},[])
+  // let total = abd.reduce((ac, el) => {
+  //   let price = el.under_price;
+  //   // let a = ruppeMaking(price)
 
-  let total = abd.reduce((ac, el) => {
-    let price = el.under_price;
-    let a = ruppeMaking(price)
+  //   return ((ac + a * text), 0)
+  // })
 
-    return ((ac + a * text), 0)
-  })
+  // console.log(text)
+  // console.log(total)
 
-  console.log(text)
-  console.log(total)
+  console.log(cart)
+
+
 
 
 
   return (
     <div>
+
       <FirstNavbar/>
       <SecondNavbraMain/>
       <Box color="#696969" borderRight={"1px solid lightgray"} w="1150px" margin="auto" mt="60px" textAlign={"start"}>
         <Flex width="290px" fontSize="14px" border={"1px solid lightgray"} mb={6}>
-          <Box bgColor={"lightgray"} color={"black"} p={"10px"} pl="15px" pr="15px" fontWeight="bold" borderColor="#696969">Shopping Bag(2)</Box>
+          <Box bgColor={"lightgray"} color={"black"} p={"10px"} pl="15px" pr="15px" fontWeight="bold" borderColor="#696969">Shopping Bag({cart.length})</Box>
           <Box p={"10px"} pl="15px" pr="15px" borderLeft={"1px solid lightgray"}>Saved for Later(0)</Box>
         </Flex>
 
@@ -108,28 +117,28 @@ const Cart = () => {
         <Flex gap={2} fontSize="14px" alignItems={"center"}><AiOutlineGift />Choose gift options when you check out.</Flex>
         <Divider mt={1} borderBottom={"1px solid lightgray"} width="1100px" />
         <Flex mt={10} gap={2} alignItems={"center"} fontSize="18px"> <TbBus /><Highlight query='India' styles={{ color: "blue" }}>
-          Delivery (2 items) to India
+          Delivery the products to India
         </Highlight></Flex>
         <Text mt={1} ml={7} fontSize="14px">International shipping</Text>
         <Divider mt={3} borderBottom={"1px solid lightgray"} width="1100px" />
 
         {
-          abd.map((el) => {
-            let price = el.under_price
-            sum = sum + ruppeMaking(price) * text
+          cart.map((el) => {
+            let price = el.el.under_price
+            // {ruppeMaking(price) * text}
+            sum = sum + ruppeMaking(price)
             console.log(sum)
             return <Box pt={5} pr={5} key={el.id} width="1100px">
               <Flex justifyContent={"space-between"}>
-                <Image w={"100px"} src={el.image1} />
+                <Image w={"100px"} src={el.el.image1} />
                 <Box>
-                  <Text>{el.all.details1}</Text>
-                  <Text>{el.all.details3}</Text>
-                  <Text>Size: X-Small</Text>
-                  <Text>Color: BLUE PALACE- WHITE STRIPE</Text>
-                  <Text>{el.item}</Text>
+                  <Text>{el.el.all.details1}</Text>
+                  <Text>{el.el.all.details3}</Text>
+                  <Text>{el.el.all.details2}</Text>
+                  <Text>{el.el.item}</Text>
                 </Box>
                 <Image width="200px" h="100px" src="./images/nord23.png" />
-                <Text>Rs. {ruppeMaking(price) * text}</Text>
+                <Text>Rs. {ruppeMaking(price)}</Text>
               </Flex>
               <Flex ml={10} mt={5}>
                 <Text>Qty</Text>
@@ -158,10 +167,10 @@ const Cart = () => {
           <Box w="400px">
             <Flex justifyContent={"space-between"}>
               <Text>Subtotal</Text>
-              <Text>Rs. {total}</Text>
+              <Text>Rs. {sum}</Text>
             </Flex>
             <Divider mt={5} mb={5} borderBottom={"1px solid lightgray"}/>
-            <Link to="/address"><Button w="400px" bgColor={"black"} color="white" fontSize={"15px"}>Checkout</Button></Link>
+            <Link to="/address"><Button disabled={cart.length===0} w="400px" bgColor={"black"} color="white" fontSize={"15px"}>Checkout</Button></Link>
           </Box>
         </Flex>
       </Box>
