@@ -60,8 +60,6 @@ const SignUpEmail = () => {
         <Text fontSize="13px" fontWeight="bold">Password</Text>
         <Input type="password" name="password" value={password} border="2px solid gray" placeholder="Enter Your Password" onChange={handlechange} required />
         <Text lineHeight="20px" mt="20px" fontSize="13px">By tapping Next, you agree to our <u>Privacy Policy</u> and <u>Terms & Conditions.</u></Text>
-
-
         <Button _hover={{ bgcolor: "gray" }} mt="20px" w="370px" fontSize="13px" bg="black" color="white" onClick={handleSubmit}>Next</Button>
       </Box>
 

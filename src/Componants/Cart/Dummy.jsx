@@ -90,5 +90,35 @@
 //     );
 // };
 
-// export default Example;
 
+
+// export default Example;
+import { Button, useToast, Wrap, WrapItem } from '@chakra-ui/react'
+import { useState } from 'react'
+
+ export default function ToastStatusExample() {
+    const toast = useToast()
+    const status = ['error']
+    const [a,sa] = useState(true)
+  
+    return (
+        // {
+
+        // }
+      <Wrap>
+          <WrapItem>
+            <Button
+              onClick={() =>
+                toast({
+                  title: `Doesnot match any card details`,
+                  status: status,
+                  isClosable: true,
+                })
+              }
+            >
+              Show {status} toast
+            </Button>
+          </WrapItem>
+      </Wrap>
+    )
+  }

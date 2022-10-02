@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Menu, MenuButton, MenuList, MenuItem, Link, Box, Divider, background } from "@chakra-ui/react";
+// import 
 
 export default function CategoryDropdown(props) {
   let { title, one, two, three, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p,q,r,s,t,u,v,w,x,y,z,wa,bi,sa,lu,mo,hi,nil,ni,nl,nir,ma,li,de,ben,kr,is,sh,na} = props;
@@ -90,7 +91,7 @@ export default function CategoryDropdown(props) {
                 setIsOpen(false);
               }}>
               <Box lineHeight="40px">
-                <Link fontWeight={"bold"} >{two}</Link><br />
+                <Link href="/femaleclothing" fontWeight={"bold"} >{two}</Link><br />
                 <Link>{e}</Link><br />
                 <Link>{f}</Link><br />
                 <Link>{g}</Link><br />
@@ -110,7 +111,7 @@ export default function CategoryDropdown(props) {
               }}
             >
               <Box lineHeight="40px">
-                <Link fontWeight={"bold"}>{three}</Link><br />
+                <Link href="/maleclothing" fontWeight={"bold"}>{three}</Link><br />
                 <Link>{i}</Link><br />
                 <Link>{j}</Link><br />
                 <Link>{k}</Link><br />

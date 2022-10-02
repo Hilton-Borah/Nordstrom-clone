@@ -33,7 +33,7 @@ const Navbar = () => {
         </Stack></Box>
         <Flex>
           <Box><Link to="/signup">{details.username?details.username:"Sign In"}</Link></Box>
-          <Box><BsMinecart /></Box>
+          <Box><Link to="/cart"><BsMinecart /></Link></Box>
         </Flex>
       </Flex>
       <Divider m={"auto"} mt={-3} width={1450} borderColor="rgb(128, 128, 128)" mb="20px"/>

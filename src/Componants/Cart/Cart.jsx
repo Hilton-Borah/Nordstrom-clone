@@ -45,20 +45,20 @@ let abd = [{
 },
 {
   "id": 3,
-  "image1": "https://n.nordstrommedia.com/id/sr3/9c1bfdc2-3c89-45b2-97ef-2d05fe661d5d.jpeg?crop=pad&pad_color=FFF&format=jpeg&w=780&h=1196",
-  "image2": "https://n.nordstrommedia.com/id/sr3/392e263d-1a07-49f7-a10b-228931accab5.jpeg?crop=pad&pad_color=FFF&format=jpeg&w=780&h=1196",
-  "below_price": "Work up a sweat in these incredibly lightweight leggings made from moisture-wicking fabric that keeps you cool at the studio and beyond.",
+  "image1": "",
+  "image2": "",
+  "below_price": "",
   "all":
   {
-    "details1": "Sustainable Style",
-    "details2": "Zella",
-    "details3": "Restore Soft Pocket Leggings",
-    "details4": "(712)"
+    "details1": "",
+    "details2": "",
+    "details3": "",
+    "details4": "",
   },
-  "item": "Item #6003591",
-  "under_price": "INR1,000.92",
-  "discount": "(60% off)",
-  "original_price": "INR5,589.80"
+  "item": "",
+  "under_price":"",
+  "discount": "",
+  "original_price": "",
 },
 ]
 

@@ -11,16 +11,19 @@ import Cart from './Componants/Cart/Cart';
 import Address from './Componants/Cart/Address';
 import Payment from './Componants/Cart/Payment';
 // import SignUp from './Componants/LogSign/SignUpEmail';
-// import Dummy from './Componants/Cart/Dummy';
+import Dummy from './Componants/Cart/Dummy';
+import Female from './Componants/ProductPages/Female';
 
 function App() {
   return (
     <div className="App">
       {/* <Home/> */}
       {/* <Dummy/> */}
-{/* <AllRoute/> */}
+<AllRoute/>
 {/* <Address/> */}
-<Payment/>
+{/* <Payment/> */}
+{/* <Female/> */}
+
 
     </div>
   );

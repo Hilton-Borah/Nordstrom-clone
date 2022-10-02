@@ -1,6 +1,7 @@
 import React from 'react'
 import SecondNavbar from "../HomePage/SecondNavbar"
 import { Flex,Text } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const SecondNavbraMain = () => {
   return (
@@ -9,7 +10,7 @@ const SecondNavbraMain = () => {
           
        <SecondNavbar title="Sale" one="Sale: Get Inspired" two="Women" three="Men" four="Kids" a="Bestsellers" b="Limited-Time Sale" c="New Markdowns" d="Nordstrom Made Sale" e="New Markdowns" f="Clothing" g="Shoes" h="Handbags & Wallets" i="Accessories" j="Grooming & Cologne" k="Advanced Modern" l="Designer" m="Girls" n="Boys" o="Baby" p="Baby Gear" q="Plus" r="Petite" s="Maternity" t="Juniors" u="Gender Inclusive"  v="Contemporary" w="Designer" x="Beauty"  y="Young Adult" z="All Sale" wa="Advanced Modern" bi="Baby Gear & Essentials" hi="Grooming & Cologne"/>
 
-        <SecondNavbar title="Women" one="Women: Get Inspired" two="Clothing" three="Shoes" four="Handlebags" a="New Arrivals" b="ASOS" c="Black-Owned" d="Contemporary" e="Activewear" f="Blazers, Suits" g="Coats & Jackets" h="Dresses" i="Booties" j="Boots" k="Clogs" l="Comfort" m="Backpacks" n="Belt Bags" o="Bucket Bags" p="Camera Bags" q="Nordstrom Made" r="Wedding Shop" s="Pants & Leggings" t="Loungewear" u="Sweaters"  v="Shoulder Bags" w="Straw Bags" x="Tote Bags" y="Wedding Shop" z="Women's Looks"  wa="Sweatshirts & Hoodies" bi="Swimsuits & Cover-Ups" hi="Oxfords & Loafers" nil="Running Shoes"/>
+       <SecondNavbar title="Women" one="Women: Get Inspired" two="Clothing" three="Shoes" four="Handlebags" a="New Arrivals" b="ASOS" c="Black-Owned" d="Contemporary" e="Activewear" f="Blazers, Suits" g="Coats & Jackets" h="Dresses" i="Booties" j="Boots" k="Clogs" l="Comfort" m="Backpacks" n="Belt Bags" o="Bucket Bags" p="Camera Bags" q="Nordstrom Made" r="Wedding Shop" s="Pants & Leggings" t="Loungewear" u="Sweaters"  v="Shoulder Bags" w="Straw Bags" x="Tote Bags" y="Wedding Shop" z="Women's Looks"  wa="Sweatshirts & Hoodies" bi="Swimsuits & Cover-Ups" hi="Oxfords & Loafers" nil="Running Shoes"/>
 
         <SecondNavbar title="Men" one="Men: Get Inspired" two="Clothing" three="Shoes" four="Accessories" a="New Arrivals" b="ASOS" c="Black-Owned" d="Men's Looks" e="Activewear" f="Blazers & Sport Coats" g="Coats & Jackets" h="Dress Shirts" i="Boots" j="Comfort" k="Dress Shoes" l="Slippers" m="Backpacks" n="Bags" o="Belts" p="Gloves" q="Nordstrom Made" r="TOPMAN" s="T-Shirts" t="Polo Shirts" u="Big & Tall" v="Sneakers & Athletic" w="Sandals & Flip-Flops" x="" y="Casual Weekend" z="Vacation" wa="" bi="" hi="" nil=""/>
 
