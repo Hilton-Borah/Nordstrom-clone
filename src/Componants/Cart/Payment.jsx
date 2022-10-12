@@ -8,6 +8,8 @@ import { AiOutlineShoppingCart } from "react-icons/ai"
 
 let data;
 
+let sum=0
+
 let detailsorigin = {
     card: "12345",
     month: "01-01-2023",
@@ -22,7 +24,7 @@ let cardDetails = {
 
 
 const Payment = () => {
-    const { count, total, cart } = useContext(AuthContext)
+    const { count, total, cart,setCount,setCart ,setTotal} = useContext(AuthContext)
     const toast = useToast()
     const status = ['error']
     const [text, setText] = useState(cardDetails)
@@ -43,11 +45,14 @@ const Payment = () => {
         e.preventDefault()
         if (card === detailsorigin.card && cvv === detailsorigin.cvv) {
             setistrue(true)
+            setCount(0)
+            setCart([])
+            setTotal(sum)
 
             if (!istrue) {
                 toast({
                     title: 'Payment done.',
-                    description: "Order Placed Successfully",
+                    description: "Order Confirmed",
                     status: 'success',
                     duration: 9000,
                     isClosable: true,
@@ -66,7 +71,7 @@ const Payment = () => {
     }
 
     // console.log(data.address)
-    let sum = total + 8080 + 11044
+    let sum= total + 3080.00 +2344.00
 
     return (
         <div>
@@ -118,8 +123,8 @@ const Payment = () => {
                             <Flex alignItems={"center"} gap="10px" mb="20px" fontWeight={"Bold"} fontSize="30px"><AiOutlineShoppingCart /><Text>Your Order</Text></Flex>
                             <Button bgColor={"black"} color="white">Continue</Button>
                             <Flex justifyContent="space-between" pt="20px"><Text>Items</Text><Text>Rs. {total}</Text></Flex>
-                            <Flex justifyContent="space-between"><Text>Shipping</Text><Text>Rs. 8080</Text></Flex>
-                            <Flex justifyContent="space-between"><Text>Duties & Taxes</Text><Text>Rs. 11,044</Text></Flex>
+                            <Flex justifyContent="space-between"><Text>Shipping</Text><Text textAlign={"start"} >Rs. 3080.00</Text></Flex>
+                            <Flex justifyContent="space-between"><Text>Duties & Taxes</Text><Text textAlign={"start"}>Rs. 2,344.00</Text></Flex>
                             <Flex justifyContent="space-between" mb="30px" fontWeight={"Bold"} fontSize="20px"><Text>Total</Text><Text>Rs .{sum}</Text></Flex>
                             <Divider pb="30px" borderBottom={"1px solid gray"} />
                         </Stack>

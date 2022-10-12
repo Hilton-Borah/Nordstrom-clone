@@ -51,7 +51,7 @@ const Address = () => {
 
     console.log(cart)
 
-    let sum= total + 8080 +11044
+    let sum= total + 3080.00 +2344.00
 
 
     return (
@@ -93,7 +93,7 @@ const Address = () => {
                             </Select>
                         </Flex>
                         <Image src="./images/nord29.png" />
-                        <Flex justifyContent={"center"} alignItems="center"><Input mb="15px" type="submit" value="Continue" color={"white"} bgColor={"black"} w="300px" /></Flex>
+                        <Flex justifyContent={"center"} alignItems="center"><Input mb="15px" type="submit" value="Continue" color={"white"}  cursor="pointer" bgColor={"black"} w="300px" /></Flex>
                         <Image src="./images/nord30.png" />
                     </form>
                 </Stack>
@@ -104,8 +104,8 @@ const Address = () => {
                             <Flex alignItems={"center"} gap="10px" mb="20px" fontWeight={"Bold"} fontSize="30px"><AiOutlineShoppingCart/><Text>Your Order</Text></Flex>
                             <Button bgColor={"black"} color="white">Continue</Button>
                             <Flex justifyContent="space-between" pt="20px"><Text>Items</Text><Text textAlign={"start"} >Rs. {total}</Text></Flex>
-                            <Flex justifyContent="space-between"><Text>Shipping</Text><Text textAlign={"start"} >Rs. 8080</Text></Flex>
-                            <Flex justifyContent="space-between"><Text>Duties & Taxes</Text><Text textAlign={"start"}>Rs. 11,044</Text></Flex>
+                            <Flex justifyContent="space-between"><Text>Shipping</Text><Text textAlign={"start"} >Rs. 3080.00</Text></Flex>
+                            <Flex justifyContent="space-between"><Text>Duties & Taxes</Text><Text textAlign={"start"}>Rs. 2,344.00</Text></Flex>
                             <Flex justifyContent="space-between" mb="30px" fontWeight={"Bold"} fontSize="20px"><Text>Total</Text><Text textAlign={"start"} >Rs .{sum}</Text></Flex>
                             <Divider pb="30px" borderBottom={"1px solid gray"}/>
                         </Stack>

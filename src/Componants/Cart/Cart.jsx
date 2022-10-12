@@ -95,7 +95,7 @@ useEffect(()=>{
   // console.log(text)
   // console.log(total)
 
-  console.log(cart)
+  // console.log(cart)
 
 
 
@@ -125,9 +125,9 @@ useEffect(()=>{
         {
           cart.map((el) => {
             let price = el.el.under_price
-            // {ruppeMaking(price) * text}
+            //  setTotal(total + ruppeMaking(price))
             sum = sum + ruppeMaking(price)
-            console.log(sum)
+            console.log(sum) 
             return <Box pt={5} pr={5} key={el.id} width="1100px">
               <Flex justifyContent={"space-between"}>
                 <Image w={"100px"} src={el.el.image1} />
@@ -167,7 +167,7 @@ useEffect(()=>{
           <Box w="400px">
             <Flex justifyContent={"space-between"}>
               <Text>Subtotal</Text>
-              <Text>Rs. {sum}</Text>
+              <Text>Rs. {total}</Text>
             </Flex>
             <Divider mt={5} mb={5} borderBottom={"1px solid lightgray"}/>
             <Link to="/address"><Button disabled={cart.length===0} w="400px" bgColor={"black"} color="white" fontSize={"15px"}>Checkout</Button></Link>

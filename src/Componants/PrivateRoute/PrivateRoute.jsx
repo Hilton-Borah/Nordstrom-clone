@@ -10,6 +10,7 @@ const PrivateRoute = ({children}) => {
  
     const {auth} = useContext(AuthContext)
     if (auth===false){
+      localStorage.removeItem("details")
         alert("You are not Login. Please login first")
         return <Navigate to="/"/>
 
