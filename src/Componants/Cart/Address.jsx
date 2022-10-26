@@ -23,7 +23,7 @@ const datauser = {
 const Address = () => {
     const { count, total,cart } = useContext(AuthContext)
     const navigate = useNavigate()
-    const [text, setText] = useState(datauser);
+    const [text, setText] = useState(datauser); 
 
     const {
         email,
