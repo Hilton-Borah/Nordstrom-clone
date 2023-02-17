@@ -50,7 +50,7 @@ const Navbar = () => {
         <Flex gap="15px" alignItems={"center"}>
          <Box>
           <Menu isOpen={isOpen}>
-          <Link to="/signup"> <MenuButton
+           <MenuButton
               variant="ghost"
               mx={1}
               py={[1, 2, 2]}
@@ -62,16 +62,13 @@ const Navbar = () => {
               onMouseEnter={onOpen}
               onMouseLeave={onClose}
           >
-            <Flex alignItems={"center"} gap="10px">{details.username?`Hai, ${details.username}`:"Sign In"}<BsChevronDown/></Flex>
+            <Flex alignItems={"center"} gap="10px">{details.username?`Hai, ${details.username}`:"My acount"}<BsChevronDown/></Flex>
 
               {/* More {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} */}
-          </MenuButton></Link>
+          </MenuButton>
           <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-              <MenuItem>Purchases</MenuItem>
-              <MenuItem>Wishlist</MenuItem>
-              <MenuItem>Payment Methods</MenuItem>
-              <MenuItem>Password & Personal Info</MenuItem>
-              <MenuItem>Email & Mail Preferences</MenuItem>
+          <Link to="/signup"><MenuItem>Signup</MenuItem></Link>
+          <Link to="/login"><MenuItem>Login</MenuItem></Link>
               <MenuItem onClick={handleClick}>Sign out</MenuItem>
           </MenuList>
       </Menu>
